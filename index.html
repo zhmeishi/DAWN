@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>DAWN: Dual Augmented Memory Network for Unsupervised Video Object Tracking</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+    }
+
+    p {
+      width: 95%;
+      padding: 10px;
+      margin: auto;
+    }
+
+    /* Remove the navbar's default margin-bottom and rounded borders */
+
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+
+    /* Add a gray background color and some padding to the footer */
+
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+
+    #ours {
+      font-weight: bold;
+    }
+
+    .glyphicon.glyphicon-arrow-down.main_arr {
+      font-size: 75px;
+    }
+
+    .glyphicon.glyphicon-option-horizontal.main_arr {
+      top: 50px;
+      font-size: 75px;
+    }
+
+    .glyphicon {
+      display: block;
+      text-align:center;
+    }
+
+    #noise {
+      text-align:center;
+      vertical-align: bottom;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div class="jumbotron" style="margin-bottom:0;background-color:transparent !important" id="title">
+    <div class="container text-center">
+      <h2>DAWN: Dual Augmented Memory Network for Unsupervised Video Object Tracking</h2>
+      <p>Project Page</p>
+    </div>
+  </div>
+
+
+  <div class="jumbotron">
+    <h3 class="text-center">Overview</h2>
+    <div class="container-fluid text-align">
+      <div class="row">
+        <p>   This webpage contains visual demostration for paper <b>DAWN: Dual Augmented Memory Network for Unsupervised Video Object Tracking</b>. There will be a comparison between <b>DAWN</b> and other state-of-art trackers, especially, <b>C-COT</b> the most precise tracker of VOT 2016 and 2017, and <b>DaSiam</b> the champion of VOT 2018 real-time competition.
+        </p>
+      </div>
+    </div>
+
+ 
+    <div  id="imple">
+      <div class="container-fluid">
+
+        <div class="row">
+          <div>
+            <div class="workflow text-center">
+              <img src="images/DAWN_model.png"  alt="overview" height="270"  width="800" />
+            </div>
+          </div>  
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="jumbotron container-fluid bg-3" id="Comparison" style="background-color:transparent">
+    <div class="row" >
+      <h3 class="text-center">Comparison with other trackers</h3>
+      <p>Compared with other state-of-art trackers, <b>DAWN</b> is robust against partial and total occlusion (OC), severe motion blur (MB), abrupt changes in target appearance (AC), multiple object instances, and similar foreground and background features (SB). </p>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <span class="glyphicon glyphicon-unchecked" aria-hidden="true" style="color: rgb(255, 0, 0)"><p style="color: rgb(0, 0,0)">DAWN</p></span>
+      </div>
+      <div class="col-sm-2">
+        <span class="glyphicon glyphicon-unchecked" aria-hidden="true" style="color: rgb(0, 0,255)"><p style="color: rgb(0, 0, 0)">MemTrack</p></span> 
+      </div>
+      <div class="col-sm-2">
+        <span class="glyphicon glyphicon-unchecked" aria-hidden="true" style="color: rgb(0, 255,0)"><p style="color: rgb(0, 0, 0)">MAVOT</p></span> 
+      </div>
+      <div class="col-sm-2">
+        <span class="glyphicon glyphicon-unchecked" aria-hidden="true" style="color: rgb(255, 255,0)"><p style="color: rgb(0, 0, 0)">SiamFC</p></span> 
+      </div>
+      <div class="col-sm-3">
+        <span class="glyphicon glyphicon-unchecked" aria-hidden="true" style="color: rgb(255, 0, 255)"><p style="color: rgb(0, 0,0)">ADNet</p></span> 
+      </div>
+      <div class="col-sm-3">
+        <span class="glyphicon glyphicon-unchecked" aria-hidden="true" style="color: rgb(0, 255, 255)"><p style="color: rgb(0, 0,0)">CCOT</p></span> 
+      </div>
+		<div class="col-sm-2">
+        <span class="glyphicon glyphicon-unchecked" aria-hidden="true" style="color: rgb(100, 100, 255)"><p style="color: rgb(0, 0,0)">ECO</p></span> 
+      </div>
+		<div class="col-sm-2">
+        <span class="glyphicon glyphicon-unchecked" aria-hidden="true" style="color: rgb(127, 255, 127)"><p style="color: rgb(0, 0,0)">DaSiamRPN</p></span> 
+      </div>
+		<div class="col-sm-2">
+        <span class="glyphicon glyphicon-unchecked" aria-hidden="true" style="color: rgb(255, 100, 100)"><p style="color: rgb(0, 0,0)">DSST</p></span> 
+      </div>
+		<div class="col-sm-3">
+        <span class="glyphicon glyphicon-unchecked" aria-hidden="true" style="color: rgb(150, 150, 150)"><p style="color: rgb(0, 0,0)">KCF</p></span> 
+      </div>
+    </div>
+    <br>
+  
+    <div class="row">
+      <div class="col-sm-4">
+        <video width="400" controls autoplay loop>
+          <source src="video/basketball.mp4" type="video/mp4">
+        </video>
+        <p><b>basketball</b>： OC, SB</p>
+      </div>
+      <div class="col-sm-4">
+        <video width="400" controls autoplay loop>
+          <source src="video/butterfly.mp4" type="video/mp4">
+        </video>
+        <p><b>butterfly</b>： AC, SB</p>
+      </div>
+      <div class="col-sm-4">
+        <video width="400" controls autoplay loop>
+          <source src="video/girl.mp4" type="video/mp4">
+        </video>
+        <p><b>girl</b>: OC</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <video width="400" controls autoplay loop>
+          <source src="video/bolt1.mp4" type="video/mp4">
+        </video>
+        <p><b>bolt1</b>: SB</p>
+      </div>
+
+      <div class="col-sm-4">
+        <video width="400" controls autoplay loop>
+          <source src="video/ball2.mp4" type="video/mp4">
+        </video>
+        <p><b>ball2</b>: MB, SB</p>      
+      </div>
+
+      <div class="col-sm-4">
+        <video width="400" controls autoplay loop>
+          <source src="video/fish2.mp4" type="video/mp4">
+        </video>
+        <p><b>fish2</b>: AC, SB</p>
+      </div>
+    </div>
+	  
+	  <div class="row">
+      <div class="col-sm-4">
+        <video width="400" controls autoplay loop>
+          <source src="video/frisbee.mp4" type="video/mp4">
+        </video>
+        <p><b>frisbee</b>: OC, AC</p>
+      </div>
+
+      <div class="col-sm-4">
+        <video width="400" controls autoplay loop>
+          <source src="video/zebrafish1.mp4" type="video/mp4">
+        </video>
+        <p><b>zebrafish1</b>: AC, SB</p>      
+      </div>
+
+      <div class="col-sm-4">
+        <video width="400" controls autoplay loop>
+          <source src="video/godfather.mp4" type="video/mp4">
+        </video>
+        <p><b>godfather</b>: OC, SB</p>
+      </div>
+    </div>
+	  
+	  <div class="row">
+      <div class="col-sm-4">
+        <video width="400" controls autoplay loop>
+          <source src="video/gymnastics1.mp4" type="video/mp4">
+        </video>
+        <p><b>gymnastics1</b>: MB, SB</p>
+      </div>
+
+      <div class="col-sm-4">
+        <video width="400" controls autoplay loop>
+          <source src="video/helicopter.mp4" type="video/mp4">
+        </video>
+        <p><b>helicopter</b>: AC</p>      
+      </div>
+
+      <div class="col-sm-4">
+        <video width="400" controls autoplay loop>
+          <source src="video/motocross2.mp4" type="video/mp4">
+        </video>
+        <p><b>motocross2</b>: MB, AC</p>
+      </div>
+    </div>
+	  
+	  <div class="row">
+      <div class="col-sm-4">
+        <video width="400" controls autoplay loop>
+          <source src="video/soccer2.mp4" type="video/mp4">
+        </video>
+        <p><b>soccer2</b>: OC, MB</p>
+      </div>
+
+      <div class="col-sm-4">
+        <video width="400" controls autoplay loop>
+          <source src="video/wiper.mp4" type="video/mp4">
+        </video>
+        <p><b>wiper</b>: OC, MB</p>      
+      </div>
+
+      <div class="col-sm-4">
+        <video width="400" controls autoplay loop>
+          <source src="video/ants1.mp4" type="video/mp4">
+        </video>
+        <p><b>ants1</b>: SB</p>
+      </div>
+    </div>
+  </div><br>
+
+</body>
+<script>
+  $(".nav li").on("click", function() {
+    $(".nav li").removeClass("active");
+    $(this).addClass("active");
+  });
+</script>
+
+</html>
